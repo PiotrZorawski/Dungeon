@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="main.js"></script> 
+</head>
+<body>
+	<div id="demo">
+		<ul>
+			<li>Rooms:<div id="roomNumber"></div></li>
+			<li>X:<div id="X"></div></li>
+			<li>Y:<div id="Y"></div></li>
+			<li>Checked:<div id="roomCheckedNumber"></div></li>
+			<li>Connected:<div id="roomConnectedNumber"></div></li>
+			<li id="lair">Lair connected: </li>
+			<li>
+				<ul id="specs">
+					<li id="up">up:</li>
+					<li id="down">down:</li>
+					<li id="right">right:</li>
+					<li id="left">left:</li>
+					<li id="checked">checked:</li>
+					<li id="connected">connected:</li>
+				</ul>
+		</ul>
+		
+		
+		<table id="roomsTable">
+		
+		</table>
+		
+	</div>
+	<input type="button" onclick="makeRooms()" value="Make Them!">
+	<input type="button" onclick="testMadeRooms()" value="Test Them!">
+	<input type="button" onclick="makeMapGood()" value="Make good map!">
+</body>
