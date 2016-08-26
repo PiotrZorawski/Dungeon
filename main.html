@@ -2,10 +2,15 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<script src="main.js"></script> 
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<script src="main.js"></script>
+	<script src="movementengine.js"></script>	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<body>
-	<div id="demo">
+<body class = "container-fluid">
+	
+	<!-- <div id="demo">
 		<ul>
 			<li>Rooms:<div id="roomNumber"></div></li>
 			<li>X:<div id="X"></div></li>
@@ -30,7 +35,100 @@
 		</table>
 		
 	</div>
-	<input type="button" onclick="makeRooms()" value="Make Them!">
-	<input type="button" onclick="testMadeRooms()" value="Test Them!">
-	<input type="button" onclick="makeMapGood()" value="Make good map!">
+	<div class="row">
+	<input class="col-md-2 btn btn-default" type="button" onclick="makeRooms()" value="Make Them!">
+	<input class="col-md-2 btn btn-default" type="button" onclick="testMadeRooms()" value="Test Them!">
+	<input class="col-md-2 btn btn-default" type="button" onclick="makeMapGood()" value="Make good map!">
+	</div> -->
+
+	
+<div id "upperRow" class = "row">	
+<div class = "col-lg-8 text-center" id="imageBlock">
+	<div id = "imagePart">
+		<h3>Image</h3>
+		<p>This is where the image goes.</p>
+	</div>
+</div>
+	<div id = "statsBlock1" class = "col-lg-4">
+		<div id = "statsPart1">
+			<h3>Hero name</h3>
+			<p>Some stats.</p>
+			<ul>
+				<li>Stat1</li>
+				<li>Stat2</li>
+				<li>Stat3</li>
+				<li>Stat4</li>
+				<li>Stat5</li>
+				<li>Stat6</li>
+				<li>Stat7</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id "centralRow" class = "row">
+	<div id = "textBlock" class = "col-lg-8">
+		<div id = "textPart">
+			<h3>The text about current room</h3>
+			<p>Text</p>
+			<ul>
+				<li>Decision1</li>
+				<li>Decision2</li>
+				<li>Decision3</li>
+				<li>Decision4</li>
+			</ul>
+		</div>
+	</div>
+	<div id = "statsBlock2" class = "col-lg-4">
+		<div id = "statsPart2">
+			<h3>Position</h3>
+			<ul>
+				<li>Moves: <span id = "moveCounter"></span></li>
+				<li>PositionX: <span id = "posX"></span></li>
+				<li>PositionY: <span id = "posY"></span></li>
+				<li>Stat4</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id = "bottomRow" class="row">
+	<div id = "controlBlock" class = "col-lg-8">
+		<div id = "controlPart">
+			<div class="row" style="margin-top:4px;">
+				<div class="col-md-3">
+				</div>
+				<input class="col-md-2 btn btn-default animated fadeOut infinite" type="button" onclick="#" value="Button5" disabled>
+				<input class="col-md-2 btn btn-default" type="button" onclick="moveUp()" value="Button1">
+				<input class="col-md-2 btn btn-default animated fadeOut infinite" type="button" onclick="#" value="Button6" disabled>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<input class="col-md-2 btn btn-default" type="button" onclick="moveLeft()" value="Button2">
+				<div class="col-md-2">
+				
+				</div>
+				<input class="col-md-2 btn btn-default" type="button" onclick="moveRight()" value="Button3">
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<input class="col-md-2 btn btn-default animated fadeOut infinite" type="button" onclick="#" value="Button7" disabled>
+				<input class="col-md-2 btn btn-default" type="button" onclick="moveDown()" value="Button4">
+				<input class="col-md-2 btn btn-default animated fadeOut infinite" type="button" onclick="#" value="Button8" disabled>
+			</div>				
+		</div>
+	</div>
+	<div id = "mapBlock" class = "col-lg-4 text-center">
+		<div id = "mapPart">
+			<h3> Map will go here</h3>
+		</div>
+	</div>
+</div>
+	
+	
+	
+	
+	
+	
 </body>

@@ -181,8 +181,6 @@ function testMadeRooms(){
 		}
 		return roomsNumberConnected;
 	}
-	
-	/* connects rooms */
 
 	function makeRoomsConnected(){
 		while (countConnectedRooms() != countCkeckedRooms()){
@@ -235,7 +233,6 @@ function testMadeRooms(){
 	
 }
 
-/* create full map with expected conditions */
 
 function makeMapGood(){
 		makeRooms()
