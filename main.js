@@ -27,7 +27,7 @@ var tempRooms = []
 	}
 
 /* random generators */	
-function randomGeneretarTrueOrFalse(){
+function randomGeneretorTrueOrFalse(){
 	var x = Math.floor(Math.random() * 2)
 	if (x === 0){
 		return false;
@@ -55,10 +55,11 @@ function makeRooms(){
 	this.left = l
 	this.checked = false
 	this.connected = false
+	this.visited = false
 	}
 	/* creates first row */
 	for (k = 0; k < sizeX; k++){
-		tempRooms.push(new Room(randomGeneretarTrueOrFalse(), false, randomGeneretarTrueOrFalse(), randomGeneretarTrueOrFalse()));
+		tempRooms.push(new Room(randomGeneretorTrueOrFalse(), false, randomGeneretorTrueOrFalse(), randomGeneretorTrueOrFalse()));
 	}
 	rooms.push(tempRooms);	
 	
@@ -71,6 +72,10 @@ function makeRooms(){
 	rooms[0][x].right = true;
 	rooms[0][x].down = true;
 	rooms[0][x].connected = true;
+	rooms[0][x].visited = true;
+	position[1] = x;
+	updateStatsOnMove();
+	currentRoom = rooms[0][x];
 	if (roomIfNotDefined(0, x + 1) === true) {rooms[0][x + 1].left = true};
 	if (roomIfNotDefined(0, x - 1) === true) {rooms[0][x - 1].right = true};
 		
@@ -81,14 +86,11 @@ function makeRooms(){
 		
 		for (i=0; i < sizeX; i++){
 			
-			tempRooms.push(new Room(randomGeneretarTrueOrFalse(), rooms[j-1][i].up, randomGeneretarTrueOrFalse(), tempRoomIfNotDefined(i-1)));
+			tempRooms.push(new Room(randomGeneretorTrueOrFalse(), rooms[j-1][i].up, randomGeneretorTrueOrFalse(), tempRoomIfNotDefined(i-1)));
 		}
 		rooms.push(tempRooms);
 		
 	}
-	
-	
-	document.getElementById("roomNumber").innerHTML = rooms.length;
 	
 	/* makes borders */
 	
@@ -217,18 +219,9 @@ function testMadeRooms(){
 	var t1 = sizeY - 2;
 	var t2 = lairX;
 	
-	document.getElementById("X").innerHTML = sizeX;
-	document.getElementById("Y").innerHTML = sizeY;
-	document.getElementById("roomNumber").innerHTML = countRoomsNumber();
-	document.getElementById("roomConnectedNumber").innerHTML = countConnectedRooms();
-	document.getElementById("roomCheckedNumber").innerHTML = countCkeckedRooms();
-	document.getElementById("lair").innerHTML = "Lair connected:" + rooms[sizeY - 2][lairX].connected;
-	document.getElementById("up").innerHTML = "up: " + rooms[t1][t2].up; 
-	document.getElementById("down").innerHTML = "down: " + rooms[t1][t2].down; 
-	document.getElementById("right").innerHTML = "right: " + rooms[t1][t2].right; 
-	document.getElementById("left").innerHTML = "left: " + rooms[t1][t2].left; 
-	document.getElementById("checked").innerHTML = "checked: " + rooms[t1][t2].checked; 
-	document.getElementById("connected").innerHTML = "connected: " + rooms[t1][t2].connected; 
+	
+	document.getElementById("roomsNumber").innerHTML = countRoomsNumber();
+	
 		
 	
 }
